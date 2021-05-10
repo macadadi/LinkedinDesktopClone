@@ -7,7 +7,7 @@ import WorkIcon from '@material-ui/icons/Work';
 import MessageIcon from '@material-ui/icons/Message';
 import PeopleIcon from '@material-ui/icons/People';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { Avatar } from '@material-ui/core';
+
 
 
 function Header() {

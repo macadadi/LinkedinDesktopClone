@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import './feeds.css'
 import CreateIcon from '@material-ui/icons/Create';
 import InputOptions from './InputOptions';
@@ -6,22 +6,46 @@ import PhotoIcon from '@material-ui/icons/Photo';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 import AssignmentIcon from '@material-ui/icons/Assignment';
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
-import CommentIcon from '@material-ui/icons/Comment';
-import ShareIcon from '@material-ui/icons/Share';
-import SendIcon from '@material-ui/icons/Send';
 import Posts from './Posts';
+import{ db} from './firebase'
+import firebase from 'firebase'
+
 
 function Feed() {
+    const [chat,setChat]= useState('')
+    const [postfeed,setPostfeed]=useState([])
+
+    useEffect(() => {
+      db.collection("post").onSnapshot((Snapshot)=>
+      setPostfeed(
+          Snapshot.docs.map((doc)=>({
+              id:doc.id,
+              data : doc.data()
+          }))
+      ))
+    }, [])
+    const handleform = (e)=>{
+        e.preventDefault()
+        db.collection("post").add(
+            {name : "maricus Omondi",
+            position :"fullstack dev",
+            message :chat,
+            photoUrl :'',
+            timestamp : firebase.firestore.FieldValue.serverTimestamp(),
+
+            }
+        )
+        setChat('')
+    }
 
     return (
         <div className="feedSection">
             <div className="inputContainer">
                 <div className="feed_input">
                     <CreateIcon />
-                    <form>
-                        <input type="text" />
-                        <button type="submit">Send</button>
+                    <form onSubmit={handleform}>
+                        <input  type="text" value={chat} onChange={e=>setChat(e.target.value)}/>
+                        <button type="submit" >Send</button>
                     </form>
                    
                 </div>
@@ -36,7 +60,9 @@ function Feed() {
             <div className="horizontal_line">
                 <hr/> Sorted by:
             </div>
-              <Posts />
+            {postfeed.map((pst)=>(<Posts key={pst.id} name={pst.data.name} position={pst.data.position}
+               message={pst.data.message}/>))}
+            
         </div>
     )
 }
