@@ -1,0 +1,57 @@
+.header{
+    position: sticky;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    z-index: 999;
+}
+
+.header_left{
+    display: flex;
+    align-items: center;
+}
+.header_left > img {
+    width: 60px;
+    object-fit: contain;
+}
+.header_search{
+    display: flex;
+    align-items: center;
+    background:whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+.header_search > input {
+    border: none;
+    outline: none;
+    background-color: whitesmoke;
+}
+
+
+.header_right{
+    display: flex;
+  
+    
+}
+.headerOptions{
+    cursor: pointer;
+    padding :2px;
+    font-weight: 200;
+    color: rgb(136, 106, 106);
+    padding: 10px 10px;
+   
+
+
+}
+.headerOptions:hover{
+    color: rgb(12, 7, 7);
+
+}
+
+.headerOptionsicons{
+   height: 30px !important;
+   width: 30px !important;
+   object-fit: contain;
+}
+

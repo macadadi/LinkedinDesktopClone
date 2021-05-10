@@ -1,0 +1,102 @@
+.feedSection{
+  width: 60%;
+  margin:0px 10px;
+  padding: 0px 10px;
+}
+.inputContainer{
+    background-color:whitesmoke;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.feed_input{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    align-items: center;
+}
+
+form > input{
+    width: 500px;
+    height: 40px;
+    outline: none;
+    border: none;
+    padding: 0px;
+}
+form > button{
+    display: none;
+}
+.input_options{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.inputOptions_main{
+    margin-top: 5px;
+    padding: 2px;
+    width: 120px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.inputOptions_main:hover{
+cursor: pointer;
+background-color: white;
+border-radius: 5px;
+}
+
+.horizontal_line{
+    display: flex;
+    align-items: center;
+}
+.horizontal_line > hr{
+    width: 80%;
+    border: 1px solid gray;
+}
+
+.mainpost{
+    background: whitesmoke;
+}
+
+.mainpost_top{
+    display: flex;
+    margin-left: 5px;
+    padding-left: 5px;
+    align-items: center;
+}
+.mainpost_top_user{
+    margin-left: 10px;
+}
+.mainpost_top_user > h4{
+    font-weight: 600;
+    
+}
+.post_body{
+    margin:10px 10px;
+}
+.post_body > P{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style: normal;
+}
+.post_feeds{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    
+}
+.post-feed{
+    border: 2px solid black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: white;
+}
+.posts_comments{
+    padding: 10px;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+.postSection_bottom{
+    background:whitesmoke;
+    margin: 10px 0px;
+}
