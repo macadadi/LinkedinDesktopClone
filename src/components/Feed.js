@@ -47,7 +47,7 @@ function Feed() {
                 <div className="feed_input">
                     <CreateIcon />
                     <form onSubmit={handleform} className='feedform'>
-                        <input  type="text" value={chat} onChange={e=>setChat(e.target.value)}/>
+                        <input  type="text" placeholder='Type to send a message' value={chat} onChange={e=>setChat(e.target.value)}/>
                         <button type="submit" >Send</button>
                     </form>
                    
