@@ -4,6 +4,7 @@ import './App.css';
 import Feed from './components/Feed';
 import { auth } from './components/firebase';
 import Header from './components/Header';
+import Newsbar from './components/Navbar'
 import Login from './components/Login';
 import NewsLetter from './components/NewsLetter';
 import Sidebar from './components/Sidebar';
@@ -36,10 +37,10 @@ function App() {
   return (
     <div className="app">
       {/*header */}
-     
+    
    {!user ? (<Login />):(
      <>
-      <Header />
+      <Newsbar />
     <div className="sidebarmain">
       <Sidebar />
       <Feed />
