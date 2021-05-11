@@ -13,7 +13,21 @@ function Login() {
     const dispatch= useDispatch()
 
 
-    const signin=()=>{
+    const signin=(e)=>{
+        e.preventDefault()
+        if(!email || !password){
+            alert( 'please fill in your email and password')
+        }
+        auth.signInWithEmailAndPassword(email,password)
+        .then(userAuth=>{
+            dispatch(login({
+                email :userAuth.email,
+                uid :userAuth.uid,
+                name : userAuth.name,
+                photoUrl :userAuth.photoUrl,
+              }))
+        })
+        .catch(err=>alert(err))
 
     }
     const register=()=>{
