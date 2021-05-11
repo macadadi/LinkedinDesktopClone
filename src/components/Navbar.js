@@ -37,7 +37,7 @@ function Navbar() {
                     <HeaderOptions  Icon={MessageIcon} tittle={'Messages'}/>
                     <HeaderOptions  Icon={WorkIcon} tittle={'Jobs'}/>
                     <HeaderOptions  Icon={NotificationsIcon} tittle={'Notifications'}/>
-                    <HeaderOptions  avatar="https://www.compassion.com/Images/kenya-child-smiles-desert.jpg" tittle={user.name} onOut={logoutofApp}/>
+                    <HeaderOptions  avatar={user.photoUrl} tittle={user.name} onOut={logoutofApp}/>
               
                 </div>
                 </div>
