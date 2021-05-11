@@ -16,7 +16,7 @@ function Feed() {
     const [postfeed,setPostfeed]=useState([])
 
     useEffect(() => {
-      db.collection("post").onSnapshot((Snapshot)=>
+      db.collection("post").orderBy('timestamp','desc').onSnapshot((Snapshot)=>
       setPostfeed(
           Snapshot.docs.map((doc)=>({
               id:doc.id,
