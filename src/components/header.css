@@ -1,6 +1,10 @@
 .header{
-    position: sticky;
+
+    background: white;
+    width: 80%;
     display: flex;
+    margin-left: 10%;
+    margin-bottom: 20px;
     justify-content: space-evenly;
     padding-top: 10px;
     z-index: 999;

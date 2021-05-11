@@ -31,7 +31,7 @@ function Feed() {
         e.preventDefault()
         db.collection("post").add(
             {name : user.name ,
-            position : 'Software Developer' ,
+            position : user.email ,
             message :chat,
             photoUrl :'',
             timestamp : firebase.firestore.FieldValue.serverTimestamp(),
@@ -46,7 +46,7 @@ function Feed() {
             <div className="inputContainer">
                 <div className="feed_input">
                     <CreateIcon />
-                    <form onSubmit={handleform}>
+                    <form onSubmit={handleform} className='feedform'>
                         <input  type="text" value={chat} onChange={e=>setChat(e.target.value)}/>
                         <button type="submit" >Send</button>
                     </form>

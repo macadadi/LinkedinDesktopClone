@@ -23,14 +23,14 @@ function Sidebar() {
             </div>
             <div className="sidebar_stats">
                 <div className="sidebar_stat">
-                    <h4>who viewed you</h4>
+                    <h4>Viewers</h4>
                     <p className="sidebar_statNuber">
                         2300
                     </p>
 
                 </div>
                 <div className="sidebar_stat">
-                <h4>what you followed</h4>
+                <h4>followers</h4>
                     <p className="sidebar_statNuber">
                         1200
                     </p>

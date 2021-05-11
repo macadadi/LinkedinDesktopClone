@@ -29,12 +29,6 @@ function Posts({name,position,message}) {
                 <p>  {message} </p>
             </div>
             <div className="postSection_bottom">
-                <div className="post_feeds">
-                    {postFeeds('Im curious ..')}
-                    {postFeeds('This will help me ..')}
-                    {postFeeds('Love this ..')}
-                    {postFeeds('Thank so much ..')}
-                </div>
                 <div className="posts_comments">
                 <InputOptions title={'like'} Icon={ThumbUpAltIcon} color={"gray"}/>
                 <InputOptions title={'commend'} Icon={CommentIcon} color={"gray"}/>
