@@ -24,8 +24,8 @@ function Login() {
             dispatch(login({
                 email :userAuth.user.email,
                 uid :userAuth.user.uid,
-                name : 'stupid',
-                photoUrl :'boyfriend',
+                name : userAuth.user.displayName,
+                photoUrl :userAuth.user.photoURL,
               }))
         })
         .catch(err=>alert(err))
@@ -39,7 +39,7 @@ function Login() {
             auth.createUserWithEmailAndPassword(email,password)
             .then((userAuth)=>{
                 userAuth.user.updateProfile({
-                    name :name,
+                    displayName :name,
                     photoUrl :profile,
                 })
                 .then(()=>{

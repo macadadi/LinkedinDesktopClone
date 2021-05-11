@@ -18,6 +18,7 @@
     padding-left: 10px;
     border-radius: 10px;
     height: 3rem;
+    outline: none;
 
 }
 .login_page form{
@@ -49,3 +50,4 @@ form > Button{
 .register_span{
     color: rgb(41, 8, 230);
 }
+
