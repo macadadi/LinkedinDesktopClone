@@ -65,7 +65,7 @@ function Login() {
         <div className="main_login">
          <div className="login_page">
              <img src="https://amazeinvent.com/wp-content/uploads/2021/02/LinkedIn.png" alt="Linked in" />
-             <form>
+             <form className='loginform'>
                  <input type="text" value={name} onChange={e=>setName(e.target.value)} placeholder='Full Name (required if registering)' />
                  <input type="text" value={profile} onChange={e=>setProfile(e.target.value)} placeholder='Profile pic URL (optional)' />
                  <input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder='Email' />
