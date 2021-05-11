@@ -9,9 +9,12 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import Posts from './Posts';
 import{ db} from './firebase'
 import firebase from 'firebase'
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
 
 
 function Feed() {
+    const user = useSelector(selectUser)
     const [chat,setChat]= useState('')
     const [postfeed,setPostfeed]=useState([])
 
@@ -27,8 +30,8 @@ function Feed() {
     const handleform = (e)=>{
         e.preventDefault()
         db.collection("post").add(
-            {name : "maricus Omondi",
-            position :"fullstack dev",
+            {name : user.name ,
+            position : 'Software Developer' ,
             message :chat,
             photoUrl :'',
             timestamp : firebase.firestore.FieldValue.serverTimestamp(),

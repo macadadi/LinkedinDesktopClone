@@ -17,7 +17,7 @@ function Posts({name,position,message}) {
     return (
         <div className="mainpost">
         <div className="mainpost_top">
-            <Avatar />
+        <Avatar src={name?.photoUrl} className="sidebarAvatar"  >{name[0]}</Avatar>
             <div className="mainpost_top_user">
                 <h2>{name}</h2>
                 <h4>{position}</h4>

@@ -12,7 +12,7 @@ import { login, logout, selectUser } from './features/userSlice';
 
 function App() {
   const user = useSelector(selectUser)
- const dispatch = useDispatch
+ const dispatch = useDispatch()
   useEffect(()=>{
     auth.onAuthStateChanged(userAuth=>{
       if(userAuth){
@@ -20,8 +20,8 @@ function App() {
         dispatch(login({
           email :userAuth.email,
           uid :userAuth.uid,
-          name : userAuth.name,
-          photoUrl :userAuth.photoUrl,
+          name : user.name,
+          photoUrl :user.photoUrl,
         }))
 
       }
@@ -44,6 +44,7 @@ function App() {
       <Feed />
     </div>
     </>)}
+    {console.log(user)}
     </div>
   );
 }

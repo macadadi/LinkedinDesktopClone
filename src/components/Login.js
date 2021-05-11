@@ -13,6 +13,7 @@ function Login() {
     const dispatch= useDispatch()
 
 
+
     const signin=(e)=>{
         e.preventDefault()
         if(!email || !password){
@@ -21,10 +22,10 @@ function Login() {
         auth.signInWithEmailAndPassword(email,password)
         .then(userAuth=>{
             dispatch(login({
-                email :userAuth.email,
-                uid :userAuth.uid,
-                name : userAuth.name,
-                photoUrl :userAuth.photoUrl,
+                email :userAuth.user.email,
+                uid :userAuth.user.uid,
+                name : 'stupid',
+                photoUrl :'boyfriend',
               }))
         })
         .catch(err=>alert(err))
@@ -45,6 +46,7 @@ function Login() {
                     dispatch(
                         login({
                         email :userAuth.user.email,
+                      
                         uid : userAuth.user.uid,
                         name : name,
                         photoUrl :profile,
@@ -59,6 +61,7 @@ function Login() {
     }
     return (
         <div className="sign_up">
+            
         <div className="main_login">
          <div className="login_page">
              <img src="https://amazeinvent.com/wp-content/uploads/2021/02/LinkedIn.png" alt="Linked in" />

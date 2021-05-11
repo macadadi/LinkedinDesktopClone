@@ -7,14 +7,16 @@ import WorkIcon from '@material-ui/icons/Work';
 import MessageIcon from '@material-ui/icons/Message';
 import PeopleIcon from '@material-ui/icons/People';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { useDispatch } from 'react-redux';
-import { logout } from '../features/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUser } from '../features/userSlice';
 import { auth } from './firebase';
 
 
 
+
 function Header() {
-     const dispatch = useDispatch()
+    const user= useSelector(selectUser)
+    const dispatch = useDispatch()
      const logoutofApp=()=>{
          dispatch(logout())
          auth.signOut()
@@ -42,7 +44,7 @@ function Header() {
                     <HeaderOptions  Icon={MessageIcon} tittle={'Messages'}/>
                     <HeaderOptions  Icon={WorkIcon} tittle={'Jobs'}/>
                     <HeaderOptions  Icon={NotificationsIcon} tittle={'Notifications'}/>
-                    <HeaderOptions  avatar="https://www.compassion.com/Images/kenya-child-smiles-desert.jpg" tittle='me' onOut={logoutofApp}/>
+                    <HeaderOptions  avatar="https://www.compassion.com/Images/kenya-child-smiles-desert.jpg" tittle={user.name} onOut={logoutofApp}/>
                     
 
                 </div>
